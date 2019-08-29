@@ -1,6 +1,5 @@
 <html>
-<style>
-	
+<style type="text/css">
 @font-face {
 font-family:castelar; //名字随便自己取，用的时候记得就行
 src:url('castelar.ttf') ;//括号里面是路径，引如之前下载的文字文件
@@ -30,7 +29,7 @@ div.box {
 		height:450px;
 	width:300px;
 	position:absolute;
-	font-family:castelar;
+font-family:castelar;
 	top:0;
 	bottom:0;
 	left:0;

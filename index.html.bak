@@ -7,7 +7,7 @@
 <style type="text/css">
 @font-face {
 font-family:castellar; //名字随便自己取，用的时候记得就行
-src:url('castellar.ttf')format('truetype');//括号里面是路径，引如之前下载的文字文件
+src:url('castellar.ttf') format('truetype');//括号里面是路径，引如之前下载的文字文件
 }
 
 body {

@@ -16,7 +16,7 @@ body {
     background: -o-radial-gradient(center center, circle, #830a71, #440036, #440036);
     background: -ms-radial-gradient(center center, circle, #830a71, #440036, #440036);
     background: radial-gradient(center center, circle, #830a71, #440036, #440036);
-
+	font-family:castellar;
     color:#fff;
     }
     
@@ -70,8 +70,8 @@ img {
 
 <body>
     
-    <div class=box>
-   	 <a href="http://isher.qed.cn"><img src="92e46c57f513e989e7543c934f7aeb5e.png" alt=""></a>
+    <a href="http://isher.qed.cn"> <div class=box>
+   	<img src="92e46c57f513e989e7543c934f7aeb5e.png" alt="">
    	 <div class=test>
    
 
@@ -80,7 +80,7 @@ img {
 <p>qed.cn</p>
     </div>
 
-</div>
+</div></a>
 
 
 </body>

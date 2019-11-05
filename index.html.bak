@@ -73,7 +73,7 @@ img {
 
 <body>
     
-    <a href="http://isher.qed.cn"> <div class=box>
+<div class=box1>
    	<img src="http://i.qed.cn:81/92e46c57f513e989e7543c934f7aeb5e.png" alt="">
    	 <div class=test>
    
@@ -81,10 +81,10 @@ img {
     	
 
 <p>qed.cn</p>
+    <a href="http://isher.qed.cn"> <p>isher.qed.cn</p></a>
     </div>
 
-</div></a>
-
+</div>
 
 </body>
 </html>

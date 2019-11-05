@@ -3,11 +3,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>QED.CN</title>
+	<link rel="shortcut icon" href="http://i.qed.cn:81/favicon.ico" />
 
 <style type="text/css">
 @font-face {
 font-family:castellar; //名字随便自己取，用的时候记得就行
 src:url('castellar.ttf') format('truetype');//括号里面是路径，引如之前下载的文字文件
+font-family:castellar; 
+src:url('http://i.qed.cn:81/castellar.ttf') format('truetype');
 }
 
 body {
@@ -70,8 +73,8 @@ img {
 
 <body>
     
-    <a href="http://isher.qed.cn"> <div class=box>
-   	<img src="92e46c57f513e989e7543c934f7aeb5e.png" alt="">
+    <a href="http://isher.qed.cn"> <div class=box1>
+   	<img src="http://i.qed.cn:81/92e46c57f513e989e7543c934f7aeb5e.png" alt="">
    	 <div class=test>
    
 

@@ -1,18 +1,34 @@
-<html><head>
+<html>
+<head>
    <title>乔硕原创小说站</title>
-      <meta name="theme-color" content="#ffe18f">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description" centent="乔硕原创小说站是乔硕（Isher.Q）自己打造的全原创的小说网站，从程序、UI到内容，均为原创，小说内容涵盖了科幻、社会、古典、穿越，悬疑、战争小说,授权既可转载。">
-<meta data-react-helmet="true" property="og:description" content="乔硕原创小说站是乔硕（Isher.Q）自己打造的全原创的小说网站，从程序、UI到内容，均为原创，小说内容涵盖了科幻、社会、古典、穿越，悬疑、战争小说授权既可转载。">
-<meta data-react-helmet="true" property="og:image" content="https://x.qsis.cn:88/upload/images/favicon.png">
-<meta data-react-helmet="true" property="og:type" content="">
-<meta name=”keywords”content=”乔硕,原创小说,原创程序,tags,科幻小说,社会小说,古典小说,穿越小说,Qsis,中国小说,悬疑小说,战争小说”/>
-<meta data-react-helmet="true" property="og:site_name" content="乔硕原创小说网">
+   <meta name="theme-color" content="#ffe18f">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <!-- 修正笔误 + 规范描述 -->
+   <meta name="description" content="乔硕原创小说站是乔硕（Isher.Q）自己打造的全原创的小说网站，从程序、UI到内容，均为原创，小说内容涵盖了科幻、社会、古典、穿越，悬疑、战争小说,授权既可转载。">
+   <meta property="og:description" content="乔硕原创小说站是乔硕（Isher.Q）自己打造的全原创的小说网站，从程序、UI到内容，均为原创，小说内容涵盖了科幻、社会、古典、穿越，悬疑、战争小说授权既可转载。">
+   <meta property="og:image" content="https://x.qsis.cn:88/upload/images/favicon.png">
+   <meta property="og:type" content="website">
+   <!-- 修正全角引号 + 半角逗号分隔关键词 -->
+   <meta name="keywords" content="乔硕,原创小说,原创程序,tags,科幻小说,社会小说,古典小说,穿越小说,Qsis,中国小说,悬疑小说,战争小说">
+   <meta property="og:site_name" content="乔硕原创小说网">
 
-<script>
-var current_url = window.location.href;
-target_url = current_url.replace("https://xiaoshuo.qsis.cn/","https://x.qsis.cn:88");
-window.location = target_url;
-</script></head><body>
-<p class=p3><a href=https://x.qsis.cn:88/ target=_blank>乔硕原创小说站是乔硕（Isher）打造的全原创的小说网站，从程序、UI到小说内容，均为原创，小说内容涵盖了科幻、社会、古典、穿越，悬疑、战争小说,授权既可转载。</p>
-</body></html>
+   <!-- 核心改：meta refresh 跳转（爬虫认） + JS兜底（兼容用户） -->
+   <meta http-equiv="refresh" content="0; url=https://x.qsis.cn:88/">
+   <script>
+   // 优化URL替换逻辑，保留路径/参数
+   var current_url = window.location.href;
+   // 替换域名部分，保留后面的路径/参数
+   target_url = current_url.replace("xiaoshuo.qsis.cn", "x.qsis.cn:88");
+   // 只有meta跳转失效时，JS才兜底
+   setTimeout(function() {
+       window.location.href = target_url;
+   }, 100);
+   </script>
+</head>
+<body>
+<!-- 优化链接样式 + 补全标签 -->
+<p class="p3">
+   <a href="https://x.qsis.cn:88/" target="_blank">乔硕原创小说站是乔硕（Isher）打造的全原创的小说网站，从程序、UI到小说内容，均为原创，小说内容涵盖了科幻、社会、古典、穿越，悬疑、战争小说,授权既可转载。</a>
+</p>
+</body>
+</html>

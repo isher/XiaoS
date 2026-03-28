@@ -56,175 +56,19 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
                      '           |      /
                                  `      |
 -->
-    <title>标签：社会解体小说</title>
-    <style>
-        :root { --primary: #3b82f6; --bg: #f3f4f6; --text: #1f2937; --card: #ffffff; }
-        
-        
-        body { font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","WenQuanYi Micro Hei","MiSans L3","Segoe UI",sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-        .container { display: flex;gap: 25px;max-width: 1200px;margin: 0 auto;padding: 0 20px; }
-        header { background: var(--card); box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1rem 0; margin-bottom: 2rem; }
-        .nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
-        .menu a { margin-left: 15px; text-decoration: none; color: var(--text); }
-        .menu a:hover { color: var(--primary); }
-        .card { background: var(--card); border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .post-list { list-style: none; padding: 0; }
-        .post-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .post-item:last-child { border-bottom: none; }
-        .post-title { font-size: 1.25rem; margin: 0 0 8px 0; }
-        .post-title a { text-decoration: none; color: var(--text); }
-        .post-title a:hover { color: var(--primary); }
-        .meta { font-size: 0.875rem; color: #6b7280; }
-        .content { font-size: 1.125rem; line-height: 1.8; }
-        .content img { max-width: 100%; height: auto; border-radius: 4px; }
-        .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
-        .btn { padding: 8px 16px; background: var(--primary); color: white; text-decoration: none; border-radius: 4px; }
-        .btn:hover { opacity: 0.9; }
-        footer { text-align: center; padding: 2rem 0; color: #6b7280; font-size: 0.875rem; }
-        h1 { font-size: 1.8rem; margin-bottom: 1rem; }
-        
-        /* ========== 新增：菜单和友情链接样式（适配现有设计风格） ========== */
-        /* 主菜单容器（兼容qc_render_menu输出结构） */
-        .menu-main { display: inline-block; margin: 0; padding: 0; }
-        .menu-main > ul { list-style: none; margin: 0; padding: 0; display: inline-flex; align-items: center; }
-        .menu-main li { position: relative; margin-left: 15px; }
-        .menu-main li a, .menu-main li span { 
-            text-decoration: none; 
-            color: var(--text); 
-            font-size: 1rem;
-            padding: 5px 0;
-            display: inline-block;
-        }
-        .menu-main li a:hover, .menu-main li span:hover { color: var(--primary); }
-        /* 二级菜单 */
-        .menu-main .submenu { 
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--card);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 10px 0;
-            min-width: 180px;
-            z-index: 999;
-        }
-        .menu-main .submenu li { 
-            margin: 0; 
-            padding: 0 15px; 
-            white-space: nowrap;
-        }
-        .menu-main .submenu li a { 
-            padding: 8px 0; 
-            display: block; 
-            color: var(--text);
-            font-size: 0.875rem;
-        }
-        .menu-main .submenu li a:hover { 
-            color: var(--primary); 
-            background: rgba(59, 130, 246, 0.05);
-        }
-        .menu-main li:hover .submenu { display: block; }
-        
-        /* 友情链接基础样式（footer和sidebar共用） */
-        .friend-links { 
-            margin: 20px auto; 
-            max-width: 900px;
-            padding: 0 20px;
-        }
-        .friend-links h3 { 
-            font-size: 1rem; 
-            color: var(--text);
-            margin-bottom: 15px;
-            font-weight: 600;
-            text-align: center;
-        }
-        .friend-links ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .friend-links li a { 
-            text-decoration: none; 
-            color: var(--primary);
-            background: rgba(59, 130, 246, 0.08);
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.875rem;
-            transition: all 0.2s;
-        }
-        .friend-links li a:hover { 
-            background: rgba(59, 130, 246, 0.15);
-            color: #2563eb;
-        }
-        
-        /* 侧边菜单样式 */
-        .sidebar { 
-            max-width: 900px;
-            margin: 0 auto 30px;
-            padding: 0 20px;
-        }
-        .side-menu { 
-            background: var(--card);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .side-menu h3 { 
-            font-size: 1rem;
-            color: var(--text);
-            margin: 0 0 15px 0;
-            font-weight: 600;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #eee;
-        }
-        .side-menu ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0;
-        }
-        .side-menu li { 
-            margin: 8px 0; 
-            padding: 0;
-        }
-        .side-menu li a, .side-menu li span { 
-            text-decoration: none; 
-            color: var(--text);
-            font-size: 0.875rem;
-            transition: color 0.2s;
-        }
-        .side-menu li a:hover, .side-menu li span:hover { 
-            color: var(--primary);
-        }
-        /* 侧边菜单二级子菜单 */
-        .side-menu .submenu { 
-            padding-left: 15px; 
-            border-left: 2px solid rgba(59, 130, 246, 0.2);
-        }
-        .side-menu .submenu li { 
-            margin: 6px 0;
-        }
-    </style>
-</head>
-<body>
-<header>
-    <div class="container nav">
-        <a href="https://xiaoshuo.qsis.cn" class="logo">深悟笔记 | 乔硕原创小说网</a>
-        <div class="menu">
-<div class="menu-main"><ul><li><a href="https://xiaoshuo.qsis.cn/" target="_self">首页</a></li><li><a href="https://xiaoshuo.qsis.cn/qiaoshuo.html" target="_self">关于</a></li><li><a href="https://xiaoshuo.qsis.cn/contact.html" target="_self">联系</a></li><li><a href="https://xiaoshuo.qsis.cn/liuyan.html" target="_self">留言</a></li><li><a href="https://xiaoshuo.qsis.cn/?login/" target="_blank">登录</a></li></ul></div>        </div>
-    </div>
-</header>
-<div class="container">
-<!-- 新增书籍封面样式 -->
+<title>标签：社会解体小说</title>
+
 <style>
-/* 公共变量定义 - 统一管理可复用值 */
+/* ==========================
+   全局变量（以你最新为主）
+========================== */
 :root {
+    --primary: #3b82f6;
+    --bg: #f3f4f6;
+    --text: #1f2937;
+    --card: #ffffff;
+
+    /* 3D 书籍变量（保留原有效果） */
     --book-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     --paper-texture: repeating-linear-gradient(to bottom, transparent, transparent 8px, rgba(0,0,0,0.02) 8px, rgba(0,0,0,0.02) 16px);
     --spine-gradient: linear-gradient(90deg, #7a6955 0%, #948066 30%, #8a775f 70%, #705f49 100%);
@@ -232,156 +76,182 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
     --pages-gradient: linear-gradient(90deg, #f5f5f5 0%, #e8e8e8 50%, #e0e0e0 100%);
 }
 
-/* 书籍封面容器样式 */
-.book-cover-container {
+/* ==========================
+   全站基础样式（以你最新为主）
+========================== */
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","WenQuanYi Micro Hei","MiSans L3","Segoe UI",sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+.container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin: 30px 0;
-    justify-content: flex-start;
-    perspective: 2000px;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+    background: var(--card);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+.menu a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--text);
+}
+.menu a:hover {
+    color: var(--primary);
+}
+.card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+.post-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+.post-item:last-child {
+    border-bottom: none;
+}
+.post-title {
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+}
+.post-title a {
+    text-decoration: none;
+    color: var(--text);
+}
+.post-title a:hover {
+    color: var(--primary);
+}
+.meta {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+.content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.btn {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
-/* 单个书籍封面的3D效果 - 倾斜书脊版 */
-.book-cover {
-    width: 160px;
-    height: 220px;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: perspective(1000px) rotateY(-18deg) rotateX(2deg) translateZ(5px);
-    transition: var(--book-transition);
+/* ==========================
+   双栏布局 & 侧边栏（上一版完整保留）
+========================== */
+/* 左侧文章区 */
+.post-main {
+    flex: 1;
+    min-width: 0;
+    transition: all 0.3s ease;
+}
+/* 右侧侧边栏 */
+.post-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+/* 侧边栏折叠状态 */
+.post-sidebar.collapsed {
+    width: 40px;
+}
+.post-sidebar.collapsed .sidebar-content {
+    display: none;
+}
+/* 折叠按钮 */
+.sidebar-toggle {
+    width: 100%;
+    padding: 8px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 
-        0 15px 30px rgba(0,0,0,0.2),
-        20px 10px 25px rgba(0,0,0,0.15),
-        inset 0 0 0 1px rgba(255,255,255,0.1);
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+    transition: background 0.2s;
+}
+.sidebar-toggle:hover {
+    background: #2563eb;
+}
+/* 侧边栏卡片 */
+.sidebar-card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.sidebar-card h3 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    color: var(--text);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+.sidebar-card .book-cover {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.sidebar-card p {
+    margin: 5px 0;
+    font-size: 0.875rem;
+    color: #6b7280;
 }
 
-/* 鼠标悬停：翻页打开效果 */
-.book-cover:hover {
-    transform: perspective(1000px) rotateY(-5deg) rotateX(0deg) translateY(-10px) translateZ(20px);
-    box-shadow: 
-        0 25px 50px rgba(0,0,0,0.3),
-        30px 20px 40px rgba(0,0,0,0.25),
-        inset 0 0 0 1px rgba(255,255,255,0.2);
-}
 
-/* --- 修改开始：底层：书页内页（翻页后露出的部分） --- */
-.book-cover-inner {
-    position: absolute;
-    border-radius: 2px 4px 4px 2px; 
-    
-    inset: 2px; 
-    background: #eee var(--paper-texture);
-    transform-origin: left center;
-    transform: rotateY(0deg) translateZ(1px);
-    backface-visibility: hidden;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
-    z-index: 1;
-    overflow: visible; 
-    transition: border-radius 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                box-shadow 0.5s ease;
-}
-
-/* 【核心修复】鼠标悬停时：翻开后，内页右上角必须是明显的圆弧 */
-.book-cover:hover .book-cover-inner {
-    border-radius: 2px 1px 14px 2px !important; 
-    
-    /* 增加阴影，让翻开的纸张更有立体感，凸显圆角边缘 */
-    box-shadow: 
-        inset 0 0 10px rgba(0,0,0,0.05),
-        3px 3px 12px rgba(0,0,0,0.15);
-}
-/* --- 修改结束 --- */
-
-/* 翻页层：封面（带图片） */
-.book-cover-front {
-    position: absolute;
-    inset: 0; 
-    background-color: #f8f8f8;
-    background-size: cover;
-    background-position: center;
-    /* 封面本身的圆角保持不变，因为它盖住了内页 */
-    border-radius: 2px 8px 8px 2px; 
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column; /* 改为列布局，支持上下两个文本区域 */
-    justify-content: space-between; /* 上下分布 */
-    box-shadow: 
-        inset 0 0 60px rgba(0,0,0,0.15),
-        -5px 0 10px rgba(0,0,0,0.05);
-    border-left: none;
-    transform-origin: left center;
-    transform: translateZ(2px);
-    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 2;
-}
-
-/* 鼠标悬停时封面翻页效果 */
-.book-cover:hover .book-cover-front {
-    transform: rotateY(-30deg) translateZ(2px);
-}
-
-/* 书脊效果 - 核心：上下边缘倾斜的立体效果 */
-.book-cover-spine {
-    position: absolute;
-    width: 30px;
-    height: 100%;
-    left: -15px;
-    top: 0;
-    background: var(--spine-gradient);
-    transform: rotateY(90deg) skewX(-5deg) skewY(2deg) translateZ(1px);
-    transform-origin: right center;
-    border-radius: 6px 0 0 6px;
-    box-shadow: 
-        inset -8px 0 15px rgba(0,0,0,0.4),
-        inset 2px 0 5px rgba(255,255,255,0.1),
-        0 0 8px rgba(0,0,0,0.3);
-    background-image: 
-        repeating-linear-gradient(
-            to bottom,
-            transparent,
-            transparent 18px,
-            rgba(255,255,255,0.07) 18px,
-            rgba(255,255,255,0.07) 36px
-        ),
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.2) 0%,
-            transparent 5%,
-            transparent 95%,
-            rgba(0,0,0,0.2) 100%
-        );
-    z-index: 0;
-}
-
-/* 书脊倾斜后的顶部/底部封边效果 */
-.book-cover-spine::before,
-.book-cover-spine::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: var(--spine-edge-gradient);
-    box-shadow: inset 0 2px 3px rgba(0,0,0,0.3);
-    transform: skewX(5deg) skewY(-2deg);
-    transform-origin: bottom left;
-}
-
-.book-cover-spine::before {
-    top: -2px;
-    border-radius: 6px 0 0 0;
-}
-
-.book-cover-spine::after {
-    bottom: -2px;
-    border-radius: 0 0 0 6px;
-    box-shadow: inset 0 -2px 3px rgba(0,0,0,0.3);
-    transform-origin: top left;
-}
-
-/* 书页侧边厚度效果 - 适配倾斜效果 */
 .book-cover-pages {
     position: absolute;
     right: -4px;
@@ -394,8 +264,6 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
     transform: skewY(0.5deg);
     z-index: 3;
 }
-
-/* 封面顶部章节名样式 */
 .book-chapter {
     width: 100%;
     padding: 8px 10px;
@@ -408,8 +276,6 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
     backdrop-filter: blur(2px);
     z-index: 4;
 }
-
-/* 封面底部书名样式 */
 .book-title {
     width: 100%;
     padding: 12px 10px 8px;
@@ -422,8 +288,6 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
     backdrop-filter: blur(2px);
     z-index: 4;
 }
-
-/* 书籍底部阴影，增强放置感 */
 .book-cover .shadow {
     position: absolute;
     bottom: -8px;
@@ -437,18 +301,172 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
     z-index: -2;
     transition: var(--book-transition);
 }
-
 .book-cover:hover .shadow {
     transform: rotateY(5deg) skewY(0.5deg) scale(1.1);
     opacity: 0.8;
 }
 
-/* 响应式适配 */
+/* ==========================
+   菜单 & 友情链接 & 侧边菜单（以你最新为主）
+========================== */
+/* 主菜单 */
+.menu-main { display: inline-block; margin: 0; padding: 0; }
+.menu-main > ul { list-style: none; margin: 0; padding: 0; display: inline-flex; align-items: center; }
+.menu-main li { position: relative; margin-left: 15px; }
+.menu-main li a, .menu-main li span {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1rem;
+    padding: 5px 0;
+    display: inline-block;
+}
+.menu-main li a:hover, .menu-main li span:hover { color: var(--primary); }
+.menu-main .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    min-width: 180px;
+    z-index: 999;
+}
+.menu-main .submenu li {
+    margin: 0;
+    padding: 0 15px;
+    white-space: nowrap;
+}
+.menu-main .submenu li a {
+    padding: 8px 0;
+    display: block;
+    color: var(--text);
+    font-size: 0.875rem;
+}
+.menu-main .submenu li a:hover {
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.05);
+}
+.menu-main li:hover .submenu { display: block; }
+
+/* 友情链接 */
+.friend-links {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+.friend-links h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+.friend-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.friend-links li a {
+    text-decoration: none;
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.08);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+.friend-links li a:hover {
+    background: rgba(59, 130, 246, 0.15);
+    color: #2563eb;
+}
+
+/* 侧边菜单 */
+.sidebar {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+.side-menu {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.side-menu h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0 0 15px 0;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.side-menu li {
+    margin: 8px 0;
+    padding: 0;
+}
+.side-menu li a, .side-menu li span {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+.side-menu li a:hover, .side-menu li span:hover {
+    color: var(--primary);
+}
+.side-menu .submenu {
+    padding-left: 15px;
+    border-left: 2px solid rgba(59, 130, 246, 0.2);
+}
+.side-menu .submenu li {
+    margin: 6px 0;
+}
+
+/* ==========================
+   通用工具样式
+========================== */
+.book-cover-link {
+    display: block;
+    text-decoration: none;
+}
+.full-width-card {
+    width: 100%;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ==========================
+   响应式适配（合并优化）
+========================== */
 @media (max-width: 768px) {
-    .book-cover {
-        width: 120px;
-        height: 180px;
+	.menu-main li{
+            margin-left: 0px;
     }
+
+    .container {
+        flex-direction: column-reverse;
+    }
+    .post-sidebar {
+        width: 100%;
+    }
+    .sidebar-toggle {
+        display: none;
+    }
+
+    /* 书籍小屏适配 */
+
     .book-cover-spine {
         width: 25px;
         left: -12px;
@@ -471,23 +489,85 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
         padding: 10px 8px 6px;
     }
 }
-
-/* 原有列表样式兼容 */
-.post-list {
-    margin-top: 20px;
+</style>
+</head>
+<body>
+<header>
+    <div class="container nav">
+        <a href="https://xiaoshuo.qsis.cn" class="logo">深悟笔记 | 乔硕原创小说网</a>
+        <div class="menu">
+<div class="menu-main"><ul><li><a href="https://xiaoshuo.qsis.cn/" target="_self">首页</a></li><li><a href="https://xiaoshuo.qsis.cn/qiaoshuo.html" target="_self">关于</a></li><li><a href="https://xiaoshuo.qsis.cn/contact.html" target="_self">联系</a></li><li><a href="https://xiaoshuo.qsis.cn/liuyan.html" target="_self">留言</a></li><li><a href="https://xiaoshuo.qsis.cn/?login/" target="_blank">登录</a></li></ul></div>        </div>
+    </div>
+</header>
+<div class="container">
+<!-- 新增书籍封面样式 -->
+<style>
+/* ==========================
+   3D 书籍封面效果（完整保留）
+========================== */
+.book-cover-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 30px 0;
+    justify-content: flex-start;
+    perspective: 2000px;
 }
-
-/* 链接样式重置 */
-.book-cover-link {
-    display: block;
-    text-decoration: none; 
+.book-cover {
+    width: 160px;
+    height: 220px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(-18deg) rotateX(2deg) translateZ(5px);
+    transition: var(--book-transition);
+    cursor: pointer;
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.2),
+        20px 10px 25px rgba(0,0,0,0.15),
+        inset 0 0 0 1px rgba(255,255,255,0.1);
 }
-
-.full-width-card {
-    width: 100%;
-    box-sizing: border-box !important; /* 核心：padding包含在宽度内，不溢出 */
-    margin-left: auto !important;
-    margin-right: auto !important;
+.book-cover:hover {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(0deg) translateY(-10px) translateZ(20px);
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.3),
+        30px 20px 40px rgba(0,0,0,0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.2);
+}
+.book-cover-inner {
+    position: absolute;
+    inset: 2px;
+    background: #eee var(--paper-texture);
+    border-radius: 2px 4px 4px 2px;
+    transform-origin: left center;
+    transform: rotateY(0deg) translateZ(1px);
+    backface-visibility: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    z-index: 1;
+    transition: border-radius 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s ease;
+}
+.book-cover:hover .book-cover-inner {
+    border-radius: 2px 1px 14px 2px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05), 3px 3px 12px rgba(0,0,0,0.15);
+}
+.book-cover-front {
+    position: absolute;
+    inset: 0;
+    background-color: #f8f8f8;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px 8px 8px 2px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.15), -5px 0 10px rgba(0,0,0,0.05);
+    transform-origin: left center;
+    transform: translateZ(2px);
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 2;
+}
+.book-cover:hover .book-cover-front {
+    transform: rotateY(-30deg) translateZ(2px);
 }
 </style>
 

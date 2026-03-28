@@ -56,161 +56,440 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
                      '           |      /
                                  `      |
 -->
-    <title>第一章 毕业后 - </title>
-    <style>
-        :root { --primary: #3b82f6; --bg: #f3f4f6; --text: #1f2937; --card: #ffffff; }
-        
-        
-        body { font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","WenQuanYi Micro Hei","MiSans L3","Segoe UI",sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-        .container { display: flex;gap: 25px;max-width: 1200px;margin: 0 auto;padding: 0 20px; }
-        header { background: var(--card); box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1rem 0; margin-bottom: 2rem; }
-        .nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
-        .menu a { margin-left: 15px; text-decoration: none; color: var(--text); }
-        .menu a:hover { color: var(--primary); }
-        .card { background: var(--card); border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .post-list { list-style: none; padding: 0; }
-        .post-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .post-item:last-child { border-bottom: none; }
-        .post-title { font-size: 1.25rem; margin: 0 0 8px 0; }
-        .post-title a { text-decoration: none; color: var(--text); }
-        .post-title a:hover { color: var(--primary); }
-        .meta { font-size: 0.875rem; color: #6b7280; }
-        .content { font-size: 1.125rem; line-height: 1.8; }
-        .content img { max-width: 100%; height: auto; border-radius: 4px; }
-        .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
-        .btn { padding: 8px 16px; background: var(--primary); color: white; text-decoration: none; border-radius: 4px; }
-        .btn:hover { opacity: 0.9; }
-        footer { text-align: center; padding: 2rem 0; color: #6b7280; font-size: 0.875rem; }
-        h1 { font-size: 1.8rem; margin-bottom: 1rem; }
-        
-        /* ========== 新增：菜单和友情链接样式（适配现有设计风格） ========== */
-        /* 主菜单容器（兼容qc_render_menu输出结构） */
-        .menu-main { display: inline-block; margin: 0; padding: 0; }
-        .menu-main > ul { list-style: none; margin: 0; padding: 0; display: inline-flex; align-items: center; }
-        .menu-main li { position: relative; margin-left: 15px; }
-        .menu-main li a, .menu-main li span { 
-            text-decoration: none; 
-            color: var(--text); 
-            font-size: 1rem;
-            padding: 5px 0;
-            display: inline-block;
-        }
-        .menu-main li a:hover, .menu-main li span:hover { color: var(--primary); }
-        /* 二级菜单 */
-        .menu-main .submenu { 
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--card);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 10px 0;
-            min-width: 180px;
-            z-index: 999;
-        }
-        .menu-main .submenu li { 
-            margin: 0; 
-            padding: 0 15px; 
-            white-space: nowrap;
-        }
-        .menu-main .submenu li a { 
-            padding: 8px 0; 
-            display: block; 
-            color: var(--text);
-            font-size: 0.875rem;
-        }
-        .menu-main .submenu li a:hover { 
-            color: var(--primary); 
-            background: rgba(59, 130, 246, 0.05);
-        }
-        .menu-main li:hover .submenu { display: block; }
-        
-        /* 友情链接基础样式（footer和sidebar共用） */
-        .friend-links { 
-            margin: 20px auto; 
-            max-width: 900px;
-            padding: 0 20px;
-        }
-        .friend-links h3 { 
-            font-size: 1rem; 
-            color: var(--text);
-            margin-bottom: 15px;
-            font-weight: 600;
-            text-align: center;
-        }
-        .friend-links ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .friend-links li a { 
-            text-decoration: none; 
-            color: var(--primary);
-            background: rgba(59, 130, 246, 0.08);
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.875rem;
-            transition: all 0.2s;
-        }
-        .friend-links li a:hover { 
-            background: rgba(59, 130, 246, 0.15);
-            color: #2563eb;
-        }
-        
-        /* 侧边菜单样式 */
-        .sidebar { 
-            max-width: 900px;
-            margin: 0 auto 30px;
-            padding: 0 20px;
-        }
-        .side-menu { 
-            background: var(--card);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .side-menu h3 { 
-            font-size: 1rem;
-            color: var(--text);
-            margin: 0 0 15px 0;
-            font-weight: 600;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #eee;
-        }
-        .side-menu ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0;
-        }
-        .side-menu li { 
-            margin: 8px 0; 
-            padding: 0;
-        }
-        .side-menu li a, .side-menu li span { 
-            text-decoration: none; 
-            color: var(--text);
-            font-size: 0.875rem;
-            transition: color 0.2s;
-        }
-        .side-menu li a:hover, .side-menu li span:hover { 
-            color: var(--primary);
-        }
-        /* 侧边菜单二级子菜单 */
-        .side-menu .submenu { 
-            padding-left: 15px; 
-            border-left: 2px solid rgba(59, 130, 246, 0.2);
-        }
-        .side-menu .submenu li { 
-            margin: 6px 0;
-        }
-    </style>
+<title>第一章 毕业后 - </title>
+
+<style>
+/* ==========================
+   全局变量（以你最新为主）
+========================== */
+:root {
+    --primary: #3b82f6;
+    --bg: #f3f4f6;
+    --text: #1f2937;
+    --card: #ffffff;
+
+    /* 3D 书籍变量（保留原有效果） */
+    --book-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --paper-texture: repeating-linear-gradient(to bottom, transparent, transparent 8px, rgba(0,0,0,0.02) 8px, rgba(0,0,0,0.02) 16px);
+    --spine-gradient: linear-gradient(90deg, #7a6955 0%, #948066 30%, #8a775f 70%, #705f49 100%);
+    --spine-edge-gradient: linear-gradient(90deg, #635440 0%, #806b52 50%, #635440 100%);
+    --pages-gradient: linear-gradient(90deg, #f5f5f5 0%, #e8e8e8 50%, #e0e0e0 100%);
+}
+
+/* ==========================
+   全站基础样式（以你最新为主）
+========================== */
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","WenQuanYi Micro Hei","MiSans L3","Segoe UI",sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+.container {
+    display: flex;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+    background: var(--card);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+.menu a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--text);
+}
+.menu a:hover {
+    color: var(--primary);
+}
+.card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+.post-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+.post-item:last-child {
+    border-bottom: none;
+}
+.post-title {
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+}
+.post-title a {
+    text-decoration: none;
+    color: var(--text);
+}
+.post-title a:hover {
+    color: var(--primary);
+}
+.meta {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+.content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.btn {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* ==========================
+   双栏布局 & 侧边栏（上一版完整保留）
+========================== */
+/* 左侧文章区 */
+.post-main {
+    flex: 1;
+    min-width: 0;
+    transition: all 0.3s ease;
+}
+/* 右侧侧边栏 */
+.post-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+/* 侧边栏折叠状态 */
+.post-sidebar.collapsed {
+    width: 40px;
+}
+.post-sidebar.collapsed .sidebar-content {
+    display: none;
+}
+/* 折叠按钮 */
+.sidebar-toggle {
+    width: 100%;
+    padding: 8px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+    transition: background 0.2s;
+}
+.sidebar-toggle:hover {
+    background: #2563eb;
+}
+/* 侧边栏卡片 */
+.sidebar-card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.sidebar-card h3 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    color: var(--text);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+.sidebar-card .book-cover {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.sidebar-card p {
+    margin: 5px 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+
+.book-cover-pages {
+    position: absolute;
+    right: -4px;
+    top: 2px;
+    bottom: 2px;
+    width: 6px;
+    background: var(--pages-gradient) var(--paper-texture);
+    border-radius: 0 3px 3px 0;
+    box-shadow: inset -2px 0 5px rgba(0,0,0,0.05);
+    transform: skewY(0.5deg);
+    z-index: 3;
+}
+.book-chapter {
+    width: 100%;
+    padding: 8px 10px;
+    background: linear-gradient(rgba(0,0,0,0.7), transparent);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    box-sizing: border-box;
+    backdrop-filter: blur(2px);
+    z-index: 4;
+}
+.book-title {
+    width: 100%;
+    padding: 12px 10px 8px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+    box-sizing: border-box;
+    backdrop-filter: blur(2px);
+    z-index: 4;
+}
+.book-cover .shadow {
+    position: absolute;
+    bottom: -8px;
+    left: 10px;
+    right: 0;
+    height: 15px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    filter: blur(8px);
+    transform: rotateY(10deg) skewY(1deg);
+    z-index: -2;
+    transition: var(--book-transition);
+}
+.book-cover:hover .shadow {
+    transform: rotateY(5deg) skewY(0.5deg) scale(1.1);
+    opacity: 0.8;
+}
+
+/* ==========================
+   菜单 & 友情链接 & 侧边菜单（以你最新为主）
+========================== */
+/* 主菜单 */
+.menu-main { display: inline-block; margin: 0; padding: 0; }
+.menu-main > ul { list-style: none; margin: 0; padding: 0; display: inline-flex; align-items: center; }
+.menu-main li { position: relative; margin-left: 15px; }
+.menu-main li a, .menu-main li span {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1rem;
+    padding: 5px 0;
+    display: inline-block;
+}
+.menu-main li a:hover, .menu-main li span:hover { color: var(--primary); }
+.menu-main .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    min-width: 180px;
+    z-index: 999;
+}
+.menu-main .submenu li {
+    margin: 0;
+    padding: 0 15px;
+    white-space: nowrap;
+}
+.menu-main .submenu li a {
+    padding: 8px 0;
+    display: block;
+    color: var(--text);
+    font-size: 0.875rem;
+}
+.menu-main .submenu li a:hover {
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.05);
+}
+.menu-main li:hover .submenu { display: block; }
+
+/* 友情链接 */
+.friend-links {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+.friend-links h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+.friend-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.friend-links li a {
+    text-decoration: none;
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.08);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+.friend-links li a:hover {
+    background: rgba(59, 130, 246, 0.15);
+    color: #2563eb;
+}
+
+/* 侧边菜单 */
+.sidebar {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+.side-menu {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.side-menu h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0 0 15px 0;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.side-menu li {
+    margin: 8px 0;
+    padding: 0;
+}
+.side-menu li a, .side-menu li span {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+.side-menu li a:hover, .side-menu li span:hover {
+    color: var(--primary);
+}
+.side-menu .submenu {
+    padding-left: 15px;
+    border-left: 2px solid rgba(59, 130, 246, 0.2);
+}
+.side-menu .submenu li {
+    margin: 6px 0;
+}
+
+/* ==========================
+   通用工具样式
+========================== */
+.book-cover-link {
+    display: block;
+    text-decoration: none;
+}
+.full-width-card {
+    width: 100%;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ==========================
+   响应式适配（合并优化）
+========================== */
+@media (max-width: 768px) {
+	.menu-main li{
+            margin-left: 0px;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+    }
+    .post-sidebar {
+        width: 100%;
+    }
+    .sidebar-toggle {
+        display: none;
+    }
+
+    /* 书籍小屏适配 */
+
+    .book-cover-spine {
+        width: 25px;
+        left: -12px;
+        transform: rotateY(90deg) skewX(-4deg) skewY(1.5deg) translateZ(1px);
+    }
+    .book-cover-spine::before,
+    .book-cover-spine::after {
+        transform: skewX(4deg) skewY(-1.5deg);
+    }
+    .book-cover-pages {
+        right: -3px;
+        width: 5px;
+    }
+    .book-chapter {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+    }
+    .book-title {
+        font-size: 0.8rem;
+        padding: 10px 8px 6px;
+    }
+}
+</style>
 </head>
 <body>
 <header>
@@ -221,87 +500,7 @@ This is a proprietary program developed by our site (Qsis.cn). It is about to be
     </div>
 </header>
 <div class="container">
-<style>
-	
-    /* 双栏布局容器 */
 
-    /* 左侧文章区 */
-    .post-main {
-        flex: 1;
-        min-width: 0; /* 防止内容溢出 */
-        transition: all 0.3s ease;
-    }
-    /* 右侧侧边栏 */
-    .post-sidebar {
-        width: 300px;
-        flex-shrink: 0;
-        transition: all 0.3s ease;
-    }
-    /* 折叠状态：侧边栏收窄到仅保留按钮 */
-    .post-sidebar.collapsed {
-        width: 40px;
-    }
-    .post-sidebar.collapsed .sidebar-content {
-        display: none;
-    }
-    /* 折叠按钮 */
-    .sidebar-toggle {
-        width: 100%;
-        padding: 8px;
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 0.875rem;
-        margin-bottom: 15px;
-        transition: background 0.2s;
-    }
-    .sidebar-toggle:hover {
-        background: #2563eb;
-    }
-    /* 右侧简介卡片（和你截图样式对齐） */
-    .sidebar-card {
-        background: var(--card);
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        margin-bottom: 20px;
-    }
-    .sidebar-card h3 {
-        font-size: 1rem;
-        margin: 0 0 10px 0;
-        color: var(--text);
-        border-bottom: 1px solid #eee;
-        padding-bottom: 8px;
-    }
-    .sidebar-card .book-cover {
-        width: 100%;
-        border-radius: 4px;
-        margin-bottom: 10px;
-    }
-    .sidebar-card p {
-        margin: 5px 0;
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
-    /* 适配小屏幕：侧边栏自动堆叠到下方 */
-    @media (max-width: 768px) {
-    	.container {
-    display: flex;
-        flex-direction: column-reverse;
-    }
-        .post-layout {
-            flex-direction: column;
-        }
-        .post-sidebar {
-            width: 100%;
-        }
-        .sidebar-toggle {
-            display: none; /* 移动端隐藏折叠按钮 */
-        }
-    }
-</style>
 
     <!-- 左侧：文章内容区 -->
     <div class="post-main">
